@@ -30,7 +30,7 @@ export default function Navbar() {
 
 
       <nav className=" border-gray-200 dark:bg-gray-900 w-full  border rounded-b-lg bg-emerald-300 fixed z-50">
-        <div className="w-11/12  flex  md:flex-row items-center px-2  mx-auto p-4">
+        <div className="w-11/12  flex   md:flex-row items-center px-2  mx-auto p-4">
           <Link to='' className="flex items-center">
             <img src={logo} className="" alt="Logo" />
           </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
 
 
             
-            <ul className="ms-auto font-medium flex flex-col rounded-lg justify-center items-center  p-4 md:p-0 pt-0  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="md:ms-auto font-medium flex flex-col rounded-lg justify-center items-center  p-4 md:p-0 pt-0  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li className=' flex md:flex-row items-center text-center py-1'>
                 <div className='w-8 h-8 rounded-full mx-1 hover:bg-emerald-600 cursor-pointer'><i className=" translate-y-1/3 fab mx-2 fa-facebook"></i></div>
                 <div className='w-8 h-8 rounded-full mx-1 hover:bg-emerald-600 cursor-pointer'><i className=' translate-y-1/3 fab mx-2 fa-twitter'></i></div>
@@ -97,12 +97,12 @@ export default function Navbar() {
 
             </ul>
           </div>
-          <button data-collapse-toggle="navbar-default" type="button" className="mb-auto ms-auto inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-    <span className="sr-only">Open main menu</span>
-    <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-    </svg>
-  </button>
+          <button data-collapse-toggle="navbar-default" type="button" className="mb-auto ms-auto inline-flex items-center  p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="true">
+            <span className="sr-only">Open main menu</span>
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+          </button>
         </div>
       </nav>
 
