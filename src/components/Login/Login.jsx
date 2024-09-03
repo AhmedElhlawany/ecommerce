@@ -63,7 +63,7 @@ let formik = useFormik({
     <>
     
     <div className='max-w-xl mx-auto '>
-      <h2 className='text-6xl font-bold text-center mb-6'>Login Now</h2>
+      <h2 className='text-6xl font-bold text-center my-6'>Login Now</h2>
     <form onSubmit={formik.handleSubmit}>
   
 
