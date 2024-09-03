@@ -16,7 +16,7 @@ export default function RecentProducts() {
   const [currentProductId, setCurrentProductId] = useState(0)
 
   let { addProductToCart,cartItemsNo, setCartItemsNo  } = useContext(CartContext);
-  let { addProductTowishlist,deleteWishItem } = useContext(WishlistContext);
+  let { addProductTowishlist,deleteWishItem ,getLoggedUserwishlist} = useContext(WishlistContext);
   const [loader, setLoader] = useState(false);
   const [wishlistItems, setWishlistItems] = useState([]); 
 
@@ -40,11 +40,32 @@ setCartItemsNo(newcartItemsNo)
 
       )
     }
-    console.log(response);
-
-
+    
   }
 
+
+
+  const handleWish = async ()=>{
+    let response = await getLoggedUserwishlist();
+    console.log(response);
+    let wishListProductItems = response.data.data.map((product) => product._id)
+    setWishlistItems(wishListProductItems)
+
+  }
+  const handleClick = (productId) => {
+    if (wishlistItems.includes(productId)) {
+      deleteItem(productId);
+    } else {
+      addWish(productId);
+    }
+  }
+
+  useEffect(() => {
+    
+    
+    handleWish()
+    
+  }, [])
 
   function getRecentProducts() {
     return axios.get('https://ecommerce.routemisr.com/api/v1/products')
@@ -86,13 +107,7 @@ setCartItemsNo(newcartItemsNo)
     }
   }
 
-  const handleClick = (productId) => {
-    if (wishlistItems.includes(productId)) {
-      deleteItem(productId);
-    } else {
-      addWish(productId);
-    }
-  }
+
 
 
 

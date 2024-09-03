@@ -14,7 +14,7 @@ export default function Categories() {
   const [categories, setCategories] = useState([])
   const [categoryProducts, setCategoryProducts] = useState([]);
   const [showCategories, setShowCategories] = useState(true);
-  let { addProductTowishlist ,deleteWishItem} = useContext(WishlistContext);
+  let { addProductTowishlist ,deleteWishItem,getLoggedUserwishlist} = useContext(WishlistContext);
   const [loader, setLoader] = useState(false);
   const [wishlistItems, setWishlistItems] = useState([]); 
 
@@ -118,13 +118,21 @@ setCartItemsNo(newcartItemsNo)
       addWish(productId);
     }
   }
+  const handleWish = async ()=>{
+    let response = await getLoggedUserwishlist();
+    console.log(response);
+    let wishListProductItems = response.data.data.map((product) => product._id)
+    setWishlistItems(wishListProductItems)
+
+  }
+
 
 
 
   useEffect(() => {
     getCategories();
 
-  
+    handleWish()
   }, [])
   
 

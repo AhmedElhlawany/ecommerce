@@ -116,21 +116,6 @@ export default function ProductDetails() {
       )
     }
     const [WishlistDetails, setWishlistDetails] = useState([])
-    async function getWishlistItems(){
-      try { 
-      
-        let response = await getLoggedUserwishlist();
-        
-        setwishlistId(response?.data?.data._id);
-        setWishlistDetails(response?.data?.data);
-        
-      
-      } catch (error) {
-        
-      
-      } 
-        
-      }
   
 
 
@@ -139,7 +124,20 @@ export default function ProductDetails() {
   let { addProductTowishlist, deleteWishItem ,setwishlistId,getLoggedUserwishlist} = useContext(WishlistContext);
   const [loader, setLoader] = useState(false);
 
+  const handleWish = async ()=>{
+    let response = await getLoggedUserwishlist();
+    console.log(response);
+    let wishListProductItems = response.data.data.map((product) => product._id)
+    setWishlistItems(wishListProductItems)
 
+  }
+
+  useEffect(() => {
+    
+    
+    handleWish()
+    
+  }, [])
   async function addWish(productId) {
     setCurrentProductId(productId);
 
@@ -184,9 +182,13 @@ export default function ProductDetails() {
   useEffect(() => {
 
     getProductDetails(id);
-    getRelatedProducts(category)
-    getWishlistItems()
+    getRelatedProducts(category);
+   
   }, [id, category])
+  // useEffect(() => {
+  //   getWishlistItems();
+  // }, [])
+  
 
 
 

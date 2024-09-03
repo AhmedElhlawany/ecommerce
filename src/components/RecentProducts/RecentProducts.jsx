@@ -44,22 +44,7 @@ export default function RecentProducts() {
       setLoading(false);
     }
   }
-  const [WishlistDetails, setWishlistDetails] = useState([])
-  async function getWishlistItems(){
-    try { 
-    
-      let response = await getLoggedUserwishlist();
-      
-      setwishlistId(response?.data?.data._id);
-      setWishlistDetails(response?.data?.data);
-      
-    
-    } catch (error) {
-      
-    
-    } 
-      
-    }
+  
 
 
 
@@ -103,6 +88,22 @@ export default function RecentProducts() {
     }
   }
 
+  
+  const handleWish = async ()=>{
+    let response = await getLoggedUserwishlist();
+    console.log(response);
+    let wishListProductItems = response.data.data.map((product) => product._id)
+    setWishlistItems(wishListProductItems)
+
+  }
+
+  useEffect(() => {
+    
+    
+    handleWish()
+    
+  }, [])
+
   const { data, isError, error, isLoading } = useQuery({
     queryKey: ['recentProducts'],
     queryFn: () => axios.get('https://ecommerce.routemisr.com/api/v1/products')
@@ -118,11 +119,7 @@ export default function RecentProducts() {
     return <div>{error.message}</div>
   }
 
-  // useEffect(() => {
-    
-    
-    
-  // }, [])
+  
   
 
   return (

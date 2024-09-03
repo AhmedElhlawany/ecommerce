@@ -36,7 +36,13 @@ try {
   
 }
 
-
+const handleWish = async ()=>{
+  let response = await getLoggedUserwishlist();
+  
+  let wishListProductItems = response.data.data.map((product) => product._id)
+  setWishlistItems(wishListProductItems)
+  
+}
 
 async function addWish(productId) {
   setCurrentProductId(productId);
@@ -104,11 +110,17 @@ setCartItemsNo(newcartItemsNo)
 
 }
 
+useEffect(() => {
+  handleWish()
+
+  
+}, [])
 
 
 useEffect(() => {
- 
   getWishlistItems();
+  
+
  
 }, [])
 
@@ -135,8 +147,8 @@ useEffect(() => {
             <div className='overflow-hidden'>
               <img className='w-full rounded-lg' src={product.imageCover} alt={product.title} />
             </div>
-            <span className='block font-light text-red-700'>{product.category.name}</span>
-            <h3 className='text-lg font-normal text-red-900 '>{product.title.split(' ').splice(0, 2).join(' ')}</h3>
+            <span className='block font-light text-red-700'>{product?.category?.name}</span>
+            <h3 className='text-lg font-normal text-red-900 '>{product?.title.split(' ').splice(0, 2).join(' ')}</h3>
             <div className="flex justify-between items-center">
               <span>{product.price} EGP</span>
               <span>{product.ratingsAverage} <i className='fas fa-star text-yellow-300'></i></span>
