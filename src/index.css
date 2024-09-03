@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+    background-color: #0d8565;
+ 
+    background: #0f8d6b; 
+}
+body{
+    font-family: "Varela Round", sans-serif;
+}
+
+.main-color{
+    @apply text-emerald-700
+}
+.container{
+    width: 90%;
+    margin: auto
+}
+
+.row{
+    @apply flex flex-wrap px-4 py-8;
+}
+
+.btn{
+    @apply px-4 py-2 w-full text-white bg-emerald-700 rounded-lg mt-1;
+}
+.btn-404{
+    left: 50%;
+    transform: translate(-50%);
+}
+.product .btn{
+    transition: 1s,opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.main-dev{
+    transition: 1s all;
+    
+    padding: 6px;
+   ;
+
+    
+}
+.main-dev:hover .product{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.5);
+    
+
+}
+.product img{
+    transition: 1s;
+}
+.main-dev:hover .product img{
+    transform: scale(1.5)  rotate(15deg);
+    
+}
+
+
+
+.product{
+    transition: 1s all;
+    overflow: hidden;
+}
+
+
+.welcome h2{
+   animation-name: boom;
+   animation-duration: 3s;
+   text-shadow: 11px 20px 10px rgba(5, 82, 61,0.4);
+    }
+
+    @keyframes boom {
+        0%   {opacity: 0;
+        transform: translateY(-100%);
+        }
+       
+        100% {opacity: 100;
+  
+        }
+      }
+
+      .welcome p{
+        animation-name: boom1;
+        animation-duration: 2s;
+      
+         }
+     
+         @keyframes boom1 {
+             0%   {opacity: 0;
+             transform: translateY(50%);
+             }
+            
+             100% {opacity: 100;
+       
+             }
+           }
+
+           .h2-cat{
+            animation-name: boo;
+            animation-duration: 2s;
+          
+             }
+         
+             @keyframes boo {
+                 0%   {opacity: 0;
+                 transform: translateX(-50%);
+                 }
+                
+                 100% {opacity: 100;
+           
+                 }
+               }
+
+
+             
+
+             
+
+
+              .relat-h2{
+                animation-name: relate;
+        animation-duration: 4s;
+              }
+              @keyframes relate {
+                0%   {opacity: 0;
+                transform: translateX(-50%);
+                }
+               
+                100% {opacity: 100;
+          
+                }
+              }
