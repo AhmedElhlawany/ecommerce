@@ -57,8 +57,7 @@ export default function Brands() {
     let response = await addProductToCart(productId);
     if (response?.data.status === "success") {
       setLoading(false);
-      let newcartItemsNo = cartItemsNo +1;
-setCartItemsNo(newcartItemsNo)
+      setCartItemsNo(response.data.numOfCartItems);
       toast.success(response?.data?.message,
         {
           duration: 2000,

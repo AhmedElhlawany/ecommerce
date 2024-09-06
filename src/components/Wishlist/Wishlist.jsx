@@ -90,8 +90,7 @@ async function addProduct(productId) {
   setLoading(true);
   let response = await addProductToCart(productId);
   if (response?.data.status === "success") {
-let newcartItemsNo = cartItemsNo +1;
-setCartItemsNo(newcartItemsNo)
+    setCartItemsNo(response.data.numOfCartItems);
 
     setLoading(false)
     toast.success(response?.data?.message,
