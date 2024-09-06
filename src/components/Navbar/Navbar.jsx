@@ -80,15 +80,15 @@ export default function Navbar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display:  'block'  }}
+            sx={{ flexGrow: 1, display:'block'}}
           >
            <Link to='' className="flex items-center">
             <img src={logo} className="" alt="Logo" />
           </Link>
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             
-              <Button  sx={{ color: '#fff' }}>
+              <Button  sx={{ color: '#fff'}}>
               {userLogin !== null ? <>
                  <ul className="font-medium flex flex-col rounded-lg ms-10 p-4 pb-0 md:p-0 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               
@@ -189,18 +189,18 @@ export default function Navbar(props) {
 <Typography
             variant="h6"
             component="div"
-            sx={{  display: 'flex'  }}
+            sx={{  display: 'block'  }}
           >
            <Link to='' className="flex items-center">
             <img src={logo}  alt="Logo" />
           </Link>
           </Typography>
-          <Box sx={{ display: 'flex'   }}>
+          <Box sx={{ display: 'flex'  ,flexDirection:'column' }}>
             
               <Button  sx={{ color: '#fff', display:'flex' ,flexDirection:'column', background:'#46c7a4' , textAlign:'start'}}>
                
               {userLogin !== null ? <>
-                 <ul className="font-medium flex flex-col rounded-lg me-auto  py-4  mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                 <ul className="font-medium flex flex-col rounded-lg me-auto  py-4  mt-4   rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               
               <li>
                 <Link to='' className="block text-lg font-bold py-1 px-1 my-1 text-gray-900  rounded-xl hover:bg-emerald-700 md:hover:bg-emerald-700 md:border-0 md:hover:text-white  dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent " aria-current="page">Home</Link>
