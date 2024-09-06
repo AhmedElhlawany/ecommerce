@@ -227,7 +227,7 @@ export default function Navbar(props) {
             </li>
               </ul>
               </> : null}
-              <ul className="me-auto font-bold text-xl mt-2 flex flex-col rounded-lg justify-center items-center  p-2  md:flex-row md:space-x-8 rtl:space-x-reverse   dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <ul className="me-auto font-bold text-xl mt-2 flex flex-col rounded-lg  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li className=' flex  items-center text-center py-1 mb-2'>
                 <div className='w-8 h-8 rounded-full mx-1 hover:bg-emerald-600 cursor-pointer'><i className=" translate-y-1/3 fab mx-2 fa-facebook"></i></div>
                 <div className='w-8 h-8 rounded-full mx-1 hover:bg-emerald-600 cursor-pointer'><i className=' translate-y-1/3 fab mx-2 fa-twitter'></i></div>
