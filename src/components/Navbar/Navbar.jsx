@@ -86,7 +86,7 @@ export default function Navbar(props) {
             <img src={logo} className="" alt="Logo" />
           </Link>
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'none' } }}>
             
               <Button  sx={{ color: '#fff' }}>
               {userLogin !== null ? <>
