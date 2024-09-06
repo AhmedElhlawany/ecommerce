@@ -23,6 +23,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useMediaQuery } from '@mui/material'
+import { useTheme } from '@emotion/react'
 
 
 
@@ -51,7 +53,7 @@ export default function Navbar(props) {
   
    
     const container = window !== undefined ? () => window().document.body : undefined;
-
+ 
 
   return (
     <>
@@ -62,7 +64,7 @@ export default function Navbar(props) {
 
 
 
-    <Box sx={{ display: 'flex'  }}>
+    <Box sx={{ display: 'flex'  }} >
       <CssBaseline />
       <AppBar component="nav" sx={{ background:'#46c7a4' }}>
         <Toolbar>
@@ -71,20 +73,20 @@ export default function Navbar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { md: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display:  'block'  }}
           >
            <Link to='' className="flex items-center">
             <img src={logo} className="" alt="Logo" />
           </Link>
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             
               <Button  sx={{ color: '#fff' }}>
               {userLogin !== null ? <>
@@ -163,7 +165,9 @@ export default function Navbar(props) {
             
             
           }}
+         
           sx={{
+            
             width: drawerWidth,
            
             display:'flex',
@@ -174,11 +178,14 @@ export default function Navbar(props) {
               width: drawerWidth,
               boxSizing: 'border-box',
             },
+            
           }}
         >
+          
 <Box  sx={{
             display:'flex',flexDirection:'column', background:'#46c7a4'
             }}>
+              
 <Typography
             variant="h6"
             component="div"
@@ -191,6 +198,7 @@ export default function Navbar(props) {
           <Box sx={{ display: 'flex'   }}>
             
               <Button  sx={{ color: '#fff', display:'flex' ,flexDirection:'column', background:'#46c7a4' , textAlign:'start'}}>
+               
               {userLogin !== null ? <>
                  <ul className="font-medium flex flex-col rounded-lg me-auto  py-4  mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               
