@@ -174,8 +174,10 @@ export default function Navbar(props) {
             flexDirection:'column',
             marginRight:'auto',
             background:'#46c7a4',
+          
             '& .MuiDrawer-paper': {
               width: drawerWidth,
+            
               boxSizing: 'border-box',
             },
             
@@ -183,7 +185,7 @@ export default function Navbar(props) {
         >
           
 <Box  sx={{
-            display:'flex',flexDirection:'column', background:'#46c7a4'
+            display:'flex',flexDirection:'column', background:'#46c7a4',height:'100vh'
             }}>
               
 <Typography
